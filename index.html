@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackChain Family - Blockchain Finance Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Welcome/Onboarding Screen -->
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-link"></i>
+                    <span>TrackChain</span>
+                </div>
+                <h1>Family</h1>
+                <p class="slogan">See where every rupee goes — powered by trust.</p>
+            </div>
+            
+            <div class="features-preview">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Blockchain Security</h3>
+                    <p>Every transaction verified and immutable</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Analysis</h3>
+                    <p>Smart insights and expense categorization</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Family Focus</h3>
+                    <p>Track finances for the whole family</p>
+                </div>
+            </div>
+            
+            <button class="cta-button" onclick="showScreen('login-screen')">
+                Get Started
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Login/Register Screen -->
+    <div id="login-screen" class="screen">
+        <div class="login-container">
+            <div class="back-button" onclick="showScreen('welcome-screen')">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your TrackChain Family account</p>
+            </div>
+            
+            <div class="login-form">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email address" id="email-input">
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password-input">
+                </div>
+                
+                <div class="wallet-connect">
+                    <button class="wallet-button">
+                        <i class="fas fa-wallet"></i>
+                        Connect Wallet
+                    </button>
+                </div>
+                
+                <button class="login-button" onclick="showScreen('home-screen')">
+                    Sign In
+                </button>
+                
+                <div class="family-roles">
+                    <h4>Select Family Role</h4>
+                    <div class="role-options">
+                        <div class="role-card" data-role="earner">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Earner</span>
+                        </div>
+                        <div class="role-card" data-role="spender">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Spender</span>
+                        </div>
+                        <div class="role-card" data-role="child">
+                            <i class="fas fa-child"></i>
+                            <span>Child</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Dashboard -->
+    <div id="home-screen" class="screen">
+        <div class="dashboard-container">
+            <div class="header">
+                <div class="user-info">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3>Welcome back, Sarah!</h3>
+                        <p>Earner • Family Account</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="balance-card">
+                <div class="balance-header">
+                    <h4>Total Balance</h4>
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="balance-amount">₹45,230</div>
+                <div class="balance-breakdown">
+                    <div class="breakdown-item">
+                        <span>Income</span>
+                        <span class="positive">+₹65,000</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Expenses</span>
+                        <span class="negative">-₹19,770</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="spending-chart">
+                <h4>Spending by Category</h4>
+                <div class="chart-container">
+                    <div class="circular-chart">
+                        <div class="chart-segment food" data-percentage="35"></div>
+                        <div class="chart-segment transport" data-percentage="25"></div>
+                        <div class="chart-segment entertainment" data-percentage="20"></div>
+                        <div class="chart-segment utilities" data-percentage="15"></div>
+                        <div class="chart-segment others" data-percentage="5"></div>
+                        <div class="chart-center">
+                            <span class="chart-total">₹19,770</span>
+                            <span class="chart-label">Total Spent</span>
+                        </div>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-color food"></div>
+                            <span>Food & Dining (35%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color transport"></div>
+                            <span>Transport (25%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color entertainment"></div>
+                            <span>Entertainment (20%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color utilities"></div>
+                            <span>Utilities (15%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color others"></div>
+                            <span>Others (5%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-alert">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="alert-content">
+                    <h5>AI Alert</h5>
+                    <p>Suspicious expense detected: ₹2,500 at "Luxury Store" - unusual for this category</p>
+                </div>
+                <button class="alert-action">Review</button>
+            </div>
+            
+            <div class="recent-transactions">
+                <div class="section-header">
+                    <h4>Recent Transactions</h4>
+                    <button class="view-all-btn">View All</button>
+                </div>
+                <div class="transaction-list">
+                    <div class="transaction-item">
+                        <div class="transaction-icon food">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <h5>Grocery Store</h5>
+                            <p>Food & Dining • 2 hours ago</p>
+                        </div>
+                        <div class="transaction-amount negative">-₹1,250</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon transport">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <h5>Fuel Station</h5>
+                            <p>Transport • 5 hours ago</p>
+                        </div>
+                        <div class="transaction-amount negative">-₹800</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon positive">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <h5>Salary Credit</h5>
+                            <p>Income • 1 day ago</p>
+                        </div>
+                        <div class="transaction-amount positive">+₹65,000</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-nav">
+                <button class="nav-item active" onclick="showScreen('home-screen')">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('add-expense-screen')">
+                    <i class="fas fa-plus"></i>
+                    <span>Add</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('analytics-screen')">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('ledger-screen')">
+                    <i class="fas fa-list"></i>
+                    <span>Ledger</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('profile-screen')">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Expense Screen -->
+    <div id="add-expense-screen" class="screen">
+        <div class="add-expense-container">
+            <div class="header">
+                <button class="back-button" onclick="showScreen('home-screen')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2>Add Expense</h2>
+                <div class="header-spacer"></div>
+            </div>
+            
+            <div class="ai-suggestion-banner">
+                <div class="suggestion-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="suggestion-content">
+                    <h5>AI Suggestion</h5>
+                    <p>Based on your location, this might be a "Food & Dining" expense</p>
+                </div>
+            </div>
+            
+            <div class="expense-form">
+                <div class="amount-input">
+                    <label>Amount</label>
+                    <div class="amount-field">
+                        <span class="currency">₹</span>
+                        <input type="number" placeholder="0.00" id="expense-amount">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Description</label>
+                    <input type="text" placeholder="What did you spend on?" id="expense-description">
+                </div>
+                
+                <div class="input-group">
+                    <label>Category</label>
+                    <select id="expense-category">
+                        <option value="">Select Category</option>
+                        <option value="food">Food & Dining</option>
+                        <option value="transport">Transport</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="education">Education</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                
+                <div class="receipt-upload">
+                    <label>Receipt (Optional)</label>
+                    <div class="upload-area" onclick="document.getElementById('receipt-file').click()">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Tap to upload receipt</p>
+                        <input type="file" id="receipt-file" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                
+                <button class="submit-expense-btn" onclick="addExpense()">
+                    <i class="fas fa-check"></i>
+                    Add Expense
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Screen -->
+    <div id="analytics-screen" class="screen">
+        <div class="analytics-container">
+            <div class="header">
+                <button class="back-button" onclick="showScreen('home-screen')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2>Analytics</h2>
+                <div class="time-filter">
+                    <select>
+                        <option>This Month</option>
+                        <option>Last Month</option>
+                        <option>This Year</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="insights-overview">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>Spending Trend</h4>
+                        <p class="trend positive">+12% vs last month</p>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>Savings Rate</h4>
+                        <p class="rate">23% of income</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="spending-chart-large">
+                <h4>Weekly Spending</h4>
+                <div class="chart-bars">
+                    <div class="bar-container">
+                        <div class="bar" style="height: 60%"></div>
+                        <span class="bar-label">Week 1</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 80%"></div>
+                        <span class="bar-label">Week 2</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 45%"></div>
+                        <span class="bar-label">Week 3</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar" style="height: 70%"></div>
+                        <span class="bar-label">Week 4</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-breakdown">
+                <h4>Category Breakdown</h4>
+                <div class="category-bars">
+                    <div class="category-bar">
+                        <div class="category-info">
+                            <span class="category-name">Food & Dining</span>
+                            <span class="category-amount">₹6,920</span>
+                        </div>
+                        <div class="category-progress">
+                            <div class="progress-bar" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <div class="category-bar">
+                        <div class="category-info">
+                            <span class="category-name">Transport</span>
+                            <span class="category-amount">₹4,940</span>
+                        </div>
+                        <div class="category-progress">
+                            <div class="progress-bar" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <div class="category-bar">
+                        <div class="category-info">
+                            <span class="category-name">Entertainment</span>
+                            <span class="category-amount">₹3,954</span>
+                        </div>
+                        <div class="category-progress">
+                            <div class="progress-bar" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div class="category-bar">
+                        <div class="category-info">
+                            <span class="category-name">Utilities</span>
+                            <span class="category-amount">₹2,966</span>
+                        </div>
+                        <div class="category-progress">
+                            <div class="progress-bar" style="width: 15%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="saving-tips">
+                <h4>Smart Saving Tips</h4>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h5>Reduce Food Expenses</h5>
+                        <p>You're spending 35% on food. Consider meal planning to save ₹2,000/month</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="tip-content">
+                        <h5>Optimize Transport</h5>
+                        <p>Use public transport 2 days/week to save ₹1,500/month</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-nav">
+                <button class="nav-item" onclick="showScreen('home-screen')">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('add-expense-screen')">
+                    <i class="fas fa-plus"></i>
+                    <span>Add</span>
+                </button>
+                <button class="nav-item active" onclick="showScreen('analytics-screen')">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('ledger-screen')">
+                    <i class="fas fa-list"></i>
+                    <span>Ledger</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('profile-screen')">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transaction Ledger -->
+    <div id="ledger-screen" class="screen">
+        <div class="ledger-container">
+            <div class="header">
+                <button class="back-button" onclick="showScreen('home-screen')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2>Transaction Ledger</h2>
+                <div class="filter-btn">
+                    <i class="fas fa-filter"></i>
+                </div>
+            </div>
+            
+            <div class="ledger-stats">
+                <div class="stat-card">
+                    <h4>Total Transactions</h4>
+                    <p class="stat-number">247</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Blockchain Verified</h4>
+                    <p class="stat-number">247</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Last Updated</h4>
+                    <p class="stat-number">2 min ago</p>
+                </div>
+            </div>
+            
+            <div class="transaction-ledger">
+                <div class="ledger-header">
+                    <h4>All Transactions</h4>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search transactions...">
+                    </div>
+                </div>
+                
+                <div class="ledger-list">
+                    <div class="ledger-item verified">
+                        <div class="ledger-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="ledger-details">
+                            <h5>Grocery Store</h5>
+                            <p class="ledger-category">Food & Dining</p>
+                            <p class="ledger-hash">Hash: 0x4a7b2c...</p>
+                        </div>
+                        <div class="ledger-amount">
+                            <span class="amount negative">-₹1,250</span>
+                            <span class="timestamp">2h ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ledger-item verified">
+                        <div class="ledger-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="ledger-details">
+                            <h5>Fuel Station</h5>
+                            <p class="ledger-category">Transport</p>
+                            <p class="ledger-hash">Hash: 0x8f3e1a...</p>
+                        </div>
+                        <div class="ledger-amount">
+                            <span class="amount negative">-₹800</span>
+                            <span class="timestamp">5h ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ledger-item verified">
+                        <div class="ledger-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="ledger-details">
+                            <h5>Salary Credit</h5>
+                            <p class="ledger-category">Income</p>
+                            <p class="ledger-hash">Hash: 0x2d9c4f...</p>
+                        </div>
+                        <div class="ledger-amount">
+                            <span class="amount positive">+₹65,000</span>
+                            <span class="timestamp">1d ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ledger-item verified">
+                        <div class="ledger-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="ledger-details">
+                            <h5>Movie Tickets</h5>
+                            <p class="ledger-category">Entertainment</p>
+                            <p class="ledger-hash">Hash: 0x7b5e8a...</p>
+                        </div>
+                        <div class="ledger-amount">
+                            <span class="amount negative">-₹600</span>
+                            <span class="timestamp">2d ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ledger-item verified">
+                        <div class="ledger-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="ledger-details">
+                            <h5>Electricity Bill</h5>
+                            <p class="ledger-category">Utilities</p>
+                            <p class="ledger-hash">Hash: 0x1c6f9d...</p>
+                        </div>
+                        <div class="ledger-amount">
+                            <span class="amount negative">-₹2,400</span>
+                            <span class="timestamp">3d ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-nav">
+                <button class="nav-item" onclick="showScreen('home-screen')">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('add-expense-screen')">
+                    <i class="fas fa-plus"></i>
+                    <span>Add</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('analytics-screen')">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </button>
+                <button class="nav-item active" onclick="showScreen('ledger-screen')">
+                    <i class="fas fa-list"></i>
+                    <span>Ledger</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('profile-screen')">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile & Settings -->
+    <div id="profile-screen" class="screen">
+        <div class="profile-container">
+            <div class="header">
+                <button class="back-button" onclick="showScreen('home-screen')">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h2>Profile & Settings</h2>
+                <div class="header-spacer"></div>
+            </div>
+            
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <h3>Sarah Johnson</h3>
+                    <p>Earner • Family Account</p>
+                    <div class="profile-status">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Account Verified</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="family-members">
+                <h4>Family Members</h4>
+                <div class="member-list">
+                    <div class="member-card">
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h5>Sarah Johnson</h5>
+                            <p>Earner</p>
+                        </div>
+                        <div class="member-status active">Active</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-info">
+                            <h5>Mike Johnson</h5>
+                            <p>Spender</p>
+                        </div>
+                        <div class="member-status active">Active</div>
+                    </div>
+                    <div class="member-card">
+                        <div class="member-avatar">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="member-info">
+                            <h5>Emma Johnson</h5>
+                            <p>Child</p>
+                        </div>
+                        <div class="member-status active">Active</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h4>Settings</h4>
+                <div class="settings-list">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-wallet"></i>
+                            <div>
+                                <h5>Wallet Management</h5>
+                                <p>Manage your blockchain wallet</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h5>Security Settings</h5>
+                                <p>Two-factor authentication, biometrics</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <h5>Notifications</h5>
+                                <p>Manage alert preferences</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-palette"></i>
+                            <div>
+                                <h5>Appearance</h5>
+                                <p>Light/Dark mode, themes</p>
+                            </div>
+                        </div>
+                        <div class="theme-toggle">
+                            <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+                            <label for="theme-toggle" class="toggle-switch">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <i class="fas fa-cog"></i>
+                            <div>
+                                <h5>General</h5>
+                                <p>Language, currency, privacy</p>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="logout-section">
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sign Out
+                </button>
+            </div>
+            
+            <div class="bottom-nav">
+                <button class="nav-item" onclick="showScreen('home-screen')">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('add-expense-screen')">
+                    <i class="fas fa-plus"></i>
+                    <span>Add</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('analytics-screen')">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </button>
+                <button class="nav-item" onclick="showScreen('ledger-screen')">
+                    <i class="fas fa-list"></i>
+                    <span>Ledger</span>
+                </button>
+                <button class="nav-item active" onclick="showScreen('profile-screen')">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
